@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:b="http://bootsfaces.net/ui">
+    
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <b:navBar brand="ClinicaSys" brandHref="#" inverse="true" fixed="true">
+            <b:navbarLinks>
+            <b:navLink value="Cadastrar" href="#" />
+            <b:dropMenu value="Cadastrar">
+                <b:navLink value="Médico" href="#" action=""/>
+                <b:navLink value="Paciente" href="#" />
+                <b:navLink value="Funcionario" href="#" />
+            </b:dropMenu>
+            </b:navbarLinks>
+                    <h:form styleClass="navbar-form navbar-right">
+                        <div class="form-group">
+                            <b:inputText placeholder="Email" fieldSize="sm"></b:inputText>
+                </div>
+                        <div class="form-group">
+                            <b:inputSecret fieldSize="sm"></b:inputSecret>
+                        </div>
+                        <div class="form-group">
+                            <b:commandButton value="Cadastrar"></b:commandButton>
+                        </div>
+                    </h:form>
+                
+        </b:navBar>
+        <b:jumbotron>
+            <b:container>
+                <h:form>
+                   <!--<p:tagCloud model="#{nuvemPalavra}"></p:tagCloud>-->-->
+                </h:form>
+            </b:container>
+                
+        </b:jumbotron>
+        <p:growl showDetail="true" />
+        <p:panel id="frmTeste" header="Meu Formulario" footer="Preenchar tudo, seu poha"/>
+       Meu Formulario
+    </h:body>
+    <h:form>
+        <p:panelGrid columns="2" >
+        <h:outputText value="Nome:"/>
+        <h:inputText value="#{formulario.nome}"/>
+         <h:outputText value="Email:"/>
+        <h:inputText value="#{formulario.email}"/>
+        </p:panelGrid>
+        <p:panelGrid columns="1">
+        <h:outputText value="Biografia:"/>
+        <p:editor value="#{formulario.biografia}"></p:editor>
+         <p:commandButton value="Cadastrar" action="#{formulario.salvar()}" icon="ui-icon-disk" />
+        </p:panelGrid>
+    </h:form>
+</html>
+
